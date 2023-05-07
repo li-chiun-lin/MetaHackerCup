@@ -1,0 +1,5 @@
+Case #1: Not enough observations
+Case #2: 577 428 402 291 252 544 735 545 771 34
+Case #3: 762 18 98 703 456 676 621 291 488 332
+Case #4: 38 802 434 531 725 594 86 921 607 35
+Case #5: Wrong machine
