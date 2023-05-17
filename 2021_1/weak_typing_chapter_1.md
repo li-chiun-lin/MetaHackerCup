@@ -8,28 +8,7 @@ Consider a string **W** which Timmy must type. Timmy may start typing with any h
 
 Given an exercise string **W** of length **N**, let **F(W)** be the minimum number of times Timmy must switch hands to type **W**. Please help Timmy compute the value of **F(W)**.
 
-## Sample input
+## Input
 
-```text
-5
-1
-O
-3
-XFO
-5
-FFOFF
-10
-FXXFXFOOXF
-13
-XFOFXFOFXFOFX
-```
-
-## Sample output
-
-```text
-Case #1: 0
-Case #2: 1
-Case #3: 0
-Case #4: 2
-Case #5: 6
-```
+Input begins with an integer $T$, the number of exercises that Timmy has been assigned.  
+For each exercise, there is first a line containing the single integer $N$, followed by a second line containing the string $W$ of length $N$.

@@ -116,11 +116,11 @@ void secondfriend_2(int R, int C, vector<string>& G)
         if (cnt)
         {
             cout << "Impossible\n";
+            return ;
         }
         else
         {
             cout << "Possible\n";
-            print(G);
         }
     }
     else
@@ -131,8 +131,10 @@ void secondfriend_2(int R, int C, vector<string>& G)
                     G[i][j] = '^';
 
         cout << "Possible\n";
-        print(G);
+        
     }
+
+    print(G);
 }
 
 int main()

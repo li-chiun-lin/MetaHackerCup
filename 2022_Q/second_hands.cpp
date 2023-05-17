@@ -25,10 +25,8 @@ bool secondhands(int N, int K, vector<int>& S)
     map<int, int> hit;
 
     for (int s : S)
-    {
         if (++ hit[s] > 2)
             return false;
-    }
 
     return true;
 }

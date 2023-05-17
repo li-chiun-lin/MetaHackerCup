@@ -53,8 +53,57 @@
   - [ ] Problem B: Traffic Control
   - [ ] Problem C: Blockchain
 - Round 2
+  - [ ] Problem A: Runway
+  - [ ] Problem B: Chainblock
+  - [ ] Problem C1: Valet Parking - Chapter 1
+  - [ ] Problem C2: Valet Parking - Chapter 2
+  - [ ] Problem D: String Concatenation
 - Round 3
+  - [ ] Problem A: Rep-ore-ting
+  - [ ] Problem B: Auth-ore-ization
+  - [ ] Problem C: Perf-ore-mance
+  - [ ] Problem D1: Expl-ore-ation - Chapter 1
+  - [ ] Problem D1: Expl-ore-ation - Chapter 2
+  - [ ] Problem D1: Expl-ore-ation - Chapter 3
 - Final Round
+  - [ ] Problem A: And
+  - [ ] Problem B: SSSSSS
+  - [ ] Problem C: Hire Flyers
+  - [ ] Problem D: Vacation
+  - [ ] Problem E: Antisocial
+  - [ ] Problem F: Table Flipping
+
+## 2020
+
+- Qualification Round
+  - [ ] Problem A: Travel Restrictions
+  - [ ] Problem B: Alchemy
+  - [ ] Problem C: Timber
+  - [ ] Problem D1: Running on Fumes - Chapter 1
+  - [ ] Problem D2: Running on Fumes - Chapter 2
+- Round 1
+  - [ ] Problem A1: Perimetric - Chapter 1
+  - [ ] Problem A2: Perimetric - Chapter 2
+  - [ ] Problem A3: Perimetric - Chapter 3
+  - [ ] Problem B: Dislodging Logs
+  - [ ] Problem C: Quarantine
+- Round 2
+  - [ ] Problem A: Ca-pasta-ty
+  - [ ] Problem B: Elimination
+  - [ ] Problem C: Circular Circles
+  - [ ] Problem D: Log Drivin' Hirin'
+- Round 3
+  - [ ] Problem A: Chain Explosions
+  - [ ] Problem B: Railroad Renovations
+  - [ ] Problem C: Mail Security
+  - [ ] Problem D: Smart Carts
+- Final Round
+  - [ ] Problem A: Cryptoconference
+  - [ ] Problem B: Somebody Else's Problem
+  - [ ] Problem C: Pond Precipitation
+  - [ ] Problem D: Spider Spring
+  - [ ] Problem E: Tree Training
+  - [ ] Problem F: Cake-Cutting Committee
 
 ## 2011
 
