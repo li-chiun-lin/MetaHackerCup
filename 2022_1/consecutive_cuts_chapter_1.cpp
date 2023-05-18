@@ -18,116 +18,52 @@ not finished
 
 using namespace std;
 
-void print(vector<int>& v)
+bool consecuivecuts1(int N, int K, vector<int>& A, vector<int>& B)
 {
-	for (int x : v)
-		cout << x << " ";
-	cout << "\n";
-}
-
-void print(vector<int>& v, int d)
-{
-	int n = v.size();
-
-    for (int i = 0; i < n; ++i)
-        cout << v[(i + d) % n] << " ";
-    cout << "\n";
-}
-
-#define D 0
-
-void runlength(vector<int>& data, vector<pair<int, long long>>& code)
-{
-    int run = data[0];
-    long long length = 1;
-
-    for (int i = 1; i < data.size(); ++i)
+    for (int cut = 0; cut < N; ++cut)
     {
-        if (data[i - 1] == data[i])
+        if (B[cut] == A[0])
         {
-            ++ length;
-        }
-        else
-        {
-            code.push_back({run, length});
-            run = data[i];
-            length = 1;
-        }
-    }
+            bool match = true;
+            int i = 0;
 
-    code.push_back({run, length});
-
-}
-
-bool consecuivecuts1(vector<int>& A_data, vector<int>& B_data, int K)
-{
-    vector<pair<int, long long>> A, B;
-
-    runlength(A_data, A);
-    runlength(B_data, B);
-
-    int N = A.size();
-
-#if D
-    cout << "start ================== \n";
-    print(A);
-    print(B);
-#endif
-
-    if (A == B)
-    {
-#if D
-        cout << "end 1 \n";
-#endif
-        return K != 1;
-    }
-
-    if (K == 0)
-    {
-#if D
-        cout << "end 2 \n";
-#endif
-        return false;
-    }
-
-    for (int d = 1; d < N; ++d)
-    {
-        bool good = true;
-
-        if (B[0].first == A[d].first && 
-            B[N - 1].first == A[(d + N - 1) % N].first &&
-            B[0].first == B[N - 1].first)
-        {
-            if (B[0].second + B[N - 1].second != 
-                A[d].second + A[(d + N - 1) % N].second)
-                good = false;
-        }
-        else
-        {
-            if (B[0] != A[d] || B[N - 1] != A[(d + N - 1) % N])
-                good = false;
-        }
-
-        for (int i = 1; i < N - 1 && good; ++i)
-            if (B[i] != A[(i + d) % N])
+            while (cut + i < N && match)
             {
-#if D
-        cout << "fail at index " << d << " " << B[i] << " " << A[(i + d) % N] << "\n";
-#endif
-                good = false;
+                if (A[i] != B[cut + i])
+                    match = false;
+
+                ++ i;
             }
 
-        if (good)
-        {
-#if D
-            cout << "find " << d << "\n";
-            print(A, d);
-#endif
+            if (! match)
+                continue;
 
-            if (N == 2)
-                return K % 2;
+            int j = 0;
+            while (j + i < N && match)
+            {
+                if (A[j + i] != B[j])
+                    match = false;
 
-            return true;
+                ++ j;
+            }
+
+            if (! match)
+                continue;
+
+            if (N > 2)
+            {
+                if (cut)
+                    return K != 0;
+                else
+                    return K != 1;
+            }
+            else
+            {
+                if (cut)
+                    return K % 2 != 0;
+                else
+                    return K % 2 == 0;
+            }
         }
     }
 
@@ -153,7 +89,7 @@ int main()
             cin >> x;
 
 		cout << "Case #" << t << ": ";
-		cout << (consecuivecuts1(A, B, K) ? "YES" : "NO") << "\n";
+		cout << (consecuivecuts1(N, K, A, B) ? "YES" : "NO") << "\n";
 	}
 
 	return 0;
