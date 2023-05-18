@@ -26,6 +26,21 @@ elif [ $2 == "vv" ]; then
 
     make $1  && \
     ./$1 < ${1}_input.txt | tee ${1}_out.txt 
+elif [ $2 == "f" ]; then
+    if [ ! -f ${1}_input.txt ]; then
+        echo "input?"
+        exit 2;
+    fi
+
+    if [ ! -f ${1}_out.txt ]; then
+        echo "original out?"
+        exit 3;
+    fi
+
+    make $1  && \
+    ./$1 < ${1}_input.txt > ${1}_out2.txt && \
+    diff ${1}_out.txt ${1}_out2.txt
+    rm ${1}_out2.txt
 elif [ $2 == "c" ]; then
     make $1  && \
     ls ${1}* | grep -E '[0-9]{2,}' | while read fn; do

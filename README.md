@@ -10,8 +10,8 @@
   - [x] Problem C2: Second Second Meaning
   - [ ] Problem D: Second Flight
 - Round 1
-  - [ ] Problem A1: Consecutive Cuts - Chapter 1
-  - [ ] Problem A2: Consecutive Cuts - Chapter 2
+  - [x] Problem A1: Consecutive Cuts - Chapter 1
+  - [x] Problem A2: Consecutive Cuts - Chapter 2
   - [ ] Problem B1: Watering Well - Chapter 1
   - [x] Problem B2: Watering Well - Chapter 2
   - [ ] Problem C: Lemonade Life

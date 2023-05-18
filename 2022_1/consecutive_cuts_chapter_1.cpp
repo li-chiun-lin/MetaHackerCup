@@ -18,7 +18,7 @@ not finished
 
 using namespace std;
 
-bool consecuivecuts1(int N, int K, vector<int>& A, vector<int>& B)
+bool consecuive_cuts_1(int N, int K, vector<int>& A, vector<int>& B)
 {
     for (int cut = 0; cut < N; ++cut)
     {
@@ -89,7 +89,7 @@ int main()
             cin >> x;
 
 		cout << "Case #" << t << ": ";
-		cout << (consecuivecuts1(N, K, A, B) ? "YES" : "NO") << "\n";
+		cout << (consecuive_cuts_1(N, K, A, B) ? "YES" : "NO") << "\n";
 	}
 
 	return 0;

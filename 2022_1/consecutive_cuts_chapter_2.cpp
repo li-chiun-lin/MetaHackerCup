@@ -17,74 +17,173 @@
 
 using namespace std;
 
-void print(vector<int>& v)
+void print(vector<pair<int, int>>& v)
 {
-	for (int x : v)
-		cout << x << " ";
-	cout << "\n";
+	for (auto& [k, v] : v)
+        cout << k << "(" << v << ") ";
+    cout << "\n";
 }
 
-void print(vector<int>& v, int d)
+vector<pair<int, int>> run_length(vector<int>& X)
 {
-	int n = v.size();
+    vector<pair<int, int>> ret;
 
-    for (int i = 0; i < n; ++i)
-        cout << v[(i + d) % n] << " ";
-    cout << "\n";
+    int r = X[0];
+    int l = 1;
+
+    for (int i = 1; i < X.size(); ++i)
+    {
+        if (r == X[i])
+            ++ l;
+        else
+        {
+            ret.push_back({r, l});
+            r = X[i];
+            l = 1;
+        }
+    }
+
+    ret.push_back({r, l});
+
+    return ret;
+}
+
+bool adjust(vector<pair<int, int>>& XX)
+{
+    if (XX.size() > 1 && XX[0].first == XX.back().first)
+    {
+        XX[0].second += XX.back().second;
+        XX.pop_back();
+        return true;
+    }
+
+    return false;
 }
 
 #define D 0
 
-bool consecuivecuts1(vector<int>& A, vector<int>& B, int K)
+bool consecuive_cuts_2(int N, int K, vector<int>& A, vector<int>& B)
 {
-    int N = A.size();
+    auto AA = run_length(A);
+    auto BB = run_length(B);
 
 #if D
-    cout << "start ================== \n";
-    print(A);
-    print(B);
+    cout << "\n";
+    print(AA);
+    print(BB);
 #endif
 
-    if (A == B)
-    {
-#if D
-        cout << "end 1 \n";
-#endif
-        return K != 1;
-    }
+    auto adjA = adjust(AA);
+    auto adjB = adjust(BB);
 
-    if (K == 0)
-    {
 #if D
-        cout << "end 2 \n";
+    cout << "after adjust\n";
+    print(AA);
+    print(BB);
 #endif
+
+    if (AA.size() != BB.size())
         return false;
-    }
 
-    for (int d = 1; d < N; ++d)
+    int NN = AA.size();
+
+    if (NN == 1)
+        return true;
+
+#if D
+    cout << "NN = " << NN << " " << adjA << " " << adjB << "\n";
+    cout << "K = " << K << "\n";
+#endif
+
+    for (int cut = 0; cut < NN; ++cut)
     {
-        bool good = true;
+        if (BB[cut] != AA[0])
+            continue;
 
-        for (int i = 0; i < N && good; ++i)
-            if (B[i] != A[(i + d) % N])
-            {
 #if D
-        cout << "fail at index " << d << " " << B[i] << " " << A[(i + d) % N] << "\n";
+        cout << "check a cut at " << cut << "\n";
 #endif
-                good = false;
-            }
 
-        if (good)
+        bool match = true;
+
+        int i = 0;
+        while (cut + i < NN && match)
         {
+            if (AA[i] != BB[cut + i])
+                match = false;
+
+            ++ i;
+        }
+
 #if D
-            cout << "find " << d << "\n";
-            print(A, d);
+        cout << "first match " << match << " " << i << "\n";
 #endif
 
-            if (N == 2)
-                return K % 2;
-                
-            return true;
+        if (! match)
+            continue;
+
+        int j = 0;
+        while (j + i < NN && match)
+        {
+            if (AA[j + i] != BB[j])
+                match = false;
+
+            ++ j;
+        }
+
+#if D
+        cout << "second match " << match << "\n";
+#endif
+
+        if (! match)
+            continue;
+
+#if D
+        cout << "find a cut at " << cut << "\n";
+#endif
+
+        if (NN > 2)
+        {
+            if (cut)
+            {
+                if (adjA && adjB && A != B)
+                    return K != 1;
+                else
+                    return K != 0;
+            }
+            else // cut == 0
+                return K != 1;
+        }
+        else // NN == 2
+        {
+            if (cut)
+            {
+                if (! adjA && ! adjB)
+                {
+                    if (N == 2)
+                        return K % 2 != 0;
+                    else
+                        return K != 0;
+                }
+                else if (adjA && adjB)
+                    return K > 1;
+                else
+                    return K != 0;
+            }
+            else // cut == 0
+            {
+                if (! adjA && ! adjB)
+                {
+                    if (N == 2)
+                        return K % 2 == 0;
+                    else
+                        return K != 1;
+                }
+                else if (adjA && adjB)
+                    return K != 1;
+                else
+                    return K != 0;
+            }
         }
     }
 
@@ -110,7 +209,7 @@ int main()
             cin >> x;
 
 		cout << "Case #" << t << ": ";
-		cout << (consecuivecuts1(A, B, K) ? "YES" : "NO") << "\n";
+		cout << (consecuive_cuts_2(N, K, A, B) ? "YES" : "NO") << "\n";
 	}
 
 	return 0;
