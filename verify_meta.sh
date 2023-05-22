@@ -42,7 +42,7 @@ elif [ $2 == "f" ]; then
     make CPPFLAGS=${FLAGS} $1  && \
     ./$1 < ${1}_input.txt > ${1}_out2.txt && \
     diff ${1}_out.txt ${1}_out2.txt
-    rm ${1}_out2.txt
+    rm -f ${1}_out2.txt
 elif [ $2 == "c" ]; then
     make CPPFLAGS=${FLAGS} $1  && \
     ls ${1}* | grep -E '[0-9]{2,}' | while read fn; do
@@ -52,4 +52,4 @@ elif [ $2 == "c" ]; then
 fi
 
 
-rm $1 
+rm -f $1 

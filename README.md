@@ -76,8 +76,8 @@
 ## 2020
 
 - Qualification Round
-  - [ ] Problem A: Travel Restrictions
-  - [ ] Problem B: Alchemy
+  - [x] Problem A: Travel Restrictions
+  - [x] Problem B: Alchemy
   - [ ] Problem C: Timber
   - [ ] Problem D1: Running on Fumes - Chapter 1
   - [ ] Problem D2: Running on Fumes - Chapter 2
@@ -88,7 +88,7 @@
   - [ ] Problem B: Dislodging Logs
   - [ ] Problem C: Quarantine
 - Round 2
-  - [ ] Problem A: Ca-pasta-ty
+  - [x] Problem A: Ca-pasta-ty
   - [ ] Problem B: Elimination
   - [ ] Problem C: Circular Circles
   - [ ] Problem D: Log Drivin' Hirin'

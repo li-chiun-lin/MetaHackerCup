@@ -8,8 +8,8 @@ An airline's flights normally service $N$ countries, running in various directio
 
 To make things more complicated, some countries have issued their own restrictions on incoming and outgoing travel. These restrictions are indicated by the characters $I_{1..N}$​ and $O_{1..N}$​, each of which is either "N" or "Y":
 
-- If $I_i$​ = "N", then incoming flights to country $i$ from any other country are disallowed. Otherwise, if $I_i = $​ "Y", they may be allowed.
-- If $O_i$​ = "N", then outgoing flights from country $i$ to any other country are disallowed. Otherwise, if $O_i = $​ "Y", they may be allowed.
+- If $I_i$​ = "N", then incoming flights to country $i$ from any other country are disallowed. Otherwise, if $I_i =$​ "Y", they may be allowed.
+- If $O_i$​ = "N", then outgoing flights from country $i$ to any other country are disallowed. Otherwise, if $O_i =$​ "Y", they may be allowed.
 
 If a flight between adjacent countries is disallowed by the restrictions of neither its departure country nor its arrival country, then it's allowed.
 
