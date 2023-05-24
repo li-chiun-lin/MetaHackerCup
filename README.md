@@ -93,7 +93,7 @@
   - [ ] Problem C: Circular Circles
   - [ ] Problem D: Log Drivin' Hirin'
 - Round 3
-  - [ ] Problem A: Chain Explosions
+  - [x] Problem A: Chain Explosions
   - [ ] Problem B: Railroad Renovations
   - [ ] Problem C: Mail Security
   - [ ] Problem D: Smart Carts
