@@ -105,6 +105,135 @@
   - [ ] Problem E: Tree Training
   - [ ] Problem F: Cake-Cutting Committee
 
+## 2019
+
+- Qualification Round
+  - [x] Problem A: Leapfrog: Ch. 1
+  - [x] Problem B: Leapfrog: Ch. 2
+  - [ ] Problem C: Mr. X
+  - [ ] Problem D: Trees as a Service
+- Round 1
+  - [ ] Problem A: Graphs as a Service
+  - [ ] Problem B: Class Treasurer
+  - [ ] Problem C: Ladders and Snakes
+  - [ ] Problem D: Connect the Dots
+- Round 2
+  - [ ] Problem A: On the Run
+  - [ ] Problem B: Bitstrings as a Service
+  - [ ] Problem C: Grading
+  - [ ] Problem D: Seafood
+- Round 3
+  - [ ] Problem A: Light Show
+  - [ ] Problem B: Integers as a Service
+  - [ ] Problem C: Renovations
+  - [ ] Problem D: Chain of Command
+- Final Round
+  - [ ] Problem A: Strings as a Service
+  - [x] Problem B: Khajiit
+  - [ ] Problem C: Scoreboard
+  - [ ] Problem D: Little Boat on the Sea
+  - [ ] Problem E: Cold Storage
+  - [ ] Problem F: Temporal Revision
+
+## 2018
+
+- Qualification Round
+  - [ ] Problem A: Tourist
+  - [ ] Problem B: Interception
+  - [ ] Problem C: Ethan Searches for a String
+- Round 1
+  - [x] Problem A: Let It Flow
+  - [ ] Problem B: Ethan Traverses a Tree
+  - [ ] Problem C: Platform Parkour
+  - [ ] Problem D: Evening of the Living Dead
+- Round 2
+  - [x] Problem A: Ethan Finds the Shortest Path
+  - [ ] Problem B: Jack's Candy Shop
+  - [ ] Problem C: Replay Value
+  - [ ] Problem D: Fossil Fuels
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2017
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2016
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2015
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2014
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2013
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
+## 2012
+
+- Qualification Round
+  - [ ] P
+- Round 1
+  - [ ] P
+- Round 2
+  - [ ] P
+- Round 3
+  - [ ] P
+- Final Round
+  - [ ] P
+
 ## 2011
 
 - Qualification Round
