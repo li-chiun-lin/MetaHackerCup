@@ -1,0 +1,5 @@
+Case #1: 1
+Case #2: 4
+Case #3: 9
+Case #4: 684
+Case #5: 6602752

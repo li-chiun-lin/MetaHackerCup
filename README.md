@@ -152,9 +152,17 @@
   - [ ] Problem C: Replay Value
   - [ ] Problem D: Fossil Fuels
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Jammin'
+  - [ ] Problem B: Ethan Finds the Maximum Subarray Sum
+  - [ ] Problem C: Graph Gift
+  - [ ] Problem D: Finshakes
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Contest Environment
+  - [ ] Problem B: Stockholm
+  - [ ] Problem C: Ethan Sums Shortest Distances
+  - [ ] Problem D: Personal Space
+  - [ ] Problem E: City Lights
+  - [ ] Problem F: The Claw
 
 ## 2017
 
