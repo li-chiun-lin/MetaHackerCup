@@ -167,9 +167,14 @@
 ## 2017
 
 - Qualification Round
-  - [ ] P
+  - [x] Problem A: Progress Pie
+  - [x] Problem B: Lazy Loading
+  - [x] Problem C: Fighting the Zombie
 - Round 1
-  - [ ] P
+  - [ ] Problem A: Pie Progress
+  - [ ] Problem B: Fighting the Zombies
+  - [ ] Problem C: Manic Moving
+  - [ ] Problem D: Beach Umbrellas
 - Round 2
   - [ ] P
 - Round 3
