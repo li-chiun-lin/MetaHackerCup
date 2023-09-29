@@ -1,5 +1,22 @@
 # Meta Hacker Cup
 
+## 2023
+
+- Qualification Round
+  - [x] Problem A1: Cheeseburger Corollary 1
+  - [x] Problem A2: Cheeseburger Corollary 2
+  - [x] Problem B: Dim Sum Delivery
+  - [x] Problem C: Two Apples a Day
+  - [ ] Problem D: Road to Nutella
+- Round 1
+  - [ ] 1
+- Round 2
+  - [ ] 1
+- Round 3
+  - [ ] 1
+- Final Round
+  - [ ] 1
+
 ## 2022
 
 - Qualification Round
@@ -171,36 +188,71 @@
   - [x] Problem B: Lazy Loading
   - [x] Problem C: Fighting the Zombie
 - Round 1
-  - [ ] Problem A: Pie Progress
+  - [x] Problem A: Pie Progress
   - [ ] Problem B: Fighting the Zombies
-  - [ ] Problem C: Manic Moving
+  - [x] Problem C: Manic Moving
   - [ ] Problem D: Beach Umbrellas
 - Round 2
-  - [ ] P
+  - [ ] Problem A: Subtle Sabotage
+  - [ ] Problem B: Big Top
+  - [ ] Problem C: Fighting all the Zombies
+  - [ ] Problem D: Rain Over New York
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Salient Strings
+  - [ ] Problem B: Sluggish Security
+  - [ ] Problem C: Pie Packages
+  - [ ] Problem D: Broken Bits
+  - [ ] Problem E: Steadfast Snakes
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Fox Patrols
+  - [ ] Problem B: Fox Moles
+  - [ ] Problem C: Fox Strolls
+  - [ ] Problem D: Fox Tolls
+  - [ ] Problem E: Fox Holes
+  - [ ] Problem F: Fox Poles
 
 ## 2016
 
 - Qualification Round
-  - [ ] P
+  - [x] Problem A: Boomerang Constellations
+  - [ ] Problem B: High Security
+  - [x] Problem C: The Price is Correct
+  - [ ] Problem D: Text Editor
 - Round 1
-  - [ ] P
+  - [x] Problem A: Coding Contest Creation
+  - [x] Problem B: Laundro, Matt
+  - [ ] Problem C: Yachtzee
+  - [ ] Problem D: Boomerang Tournament
 - Round 2
-  - [ ] P
+  - [ ] Problem A: Boomerang Decoration
+  - [ ] Problem B: Carnival Coins
+  - [ ] Problem C: Snakes and Ladders
+  - [ ] Problem D: Costly Labels
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Chess Showdown
+  - [ ] Problem B: Boomerang Farm
+  - [ ] Problem C: Boomerang Umbrella
+  - [ ] Problem D: Matt Laundro
+  - [ ] Problem E: Public Transportation
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Snake and Ladder
+  - [ ] Problem B: Boomerang Crews
+  - [ ] Problem C: Grundy Graph
+  - [ ] Problem D: RNG
+  - [ ] Problem E: Maximinimax Flow
+  - [ ] Problem F: Rainbow String
 
 ## 2015
 
 - Qualification Round
-  - [ ] P
+  - [x] Problem A: Cooking the Books
+  - [x] Problem B: New Year's Resolution
+  - [ ] Problem C: Laser Maze
 - Round 1
-  - [ ] P
+  - [x] Problem A: Homework
+  - [x] Problem B: Autocomplete
+  - [x] Problem C: Winning at Sports
+  - [ ] Problem D: Corporate Gifting
 - Round 2
   - [ ] P
 - Round 3
