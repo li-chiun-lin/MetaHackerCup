@@ -45,7 +45,7 @@ elif [ $2 == "f" ]; then
     rm -f ${1}_out2.txt
 elif [ $2 == "c" ]; then
     make CPPFLAGS=${FLAGS} $1  && \
-    ls ${1}* | grep -E '[0-9]{2,}' | while read fn; do
+    ls ${1}* | grep -E '[0-9]{15}_input' | while read fn; do
         echo $fn 
         (echo 1; cat $fn;) | ./${1}
     done

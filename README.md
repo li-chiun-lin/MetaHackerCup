@@ -9,7 +9,13 @@
   - [x] Problem C: Two Apples a Day
   - [ ] Problem D: Road to Nutella
 - Round 1
-  - [ ] 1
+  - [x] Problem A: Here Comes Santa Claus
+  - [x] Problem B1: Sum 41 (Chapter 1)
+  - [x] Problem B2: Sum 41 (Chapter 2)
+  - [x] Problem C1: Back in Black (Chapter 1)
+  - [x] Problem C2: Back in Black (Chapter 2)
+  - [ ] Problem D: Today is Gonna be a Great Day
+  - [ ] Problem E: Bohemian Rap-sody
 - Round 2
   - [ ] 1
 - Round 3
@@ -254,11 +260,21 @@
   - [x] Problem C: Winning at Sports
   - [ ] Problem D: Corporate Gifting
 - Round 2
-  - [ ] P
+  - [x] Problem A: Lazy Sort
+  - [ ] Problem B: All Critical
+  - [ ] Problem C: Autocomplete Strikes Back
+  - [ ] Problem D: Fox Socks
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Boomerang
+  - [ ] Problem B: Lunch Scheduling
+  - [ ] Problem C: Gentrification
+  - [ ] Problem D: Fox Rocks
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Fox Blocks
+  - [ ] Problem B: Fox Lochs
+  - [ ] Problem C: Fox Focks
+  - [ ] Problem D: Fox Hawks
+  - [ ] Problem E: Fox Locks
 
 ## 2014
 
