@@ -27,7 +27,7 @@ elif [ $2 == "vv" ]; then
     fi
 
     make CPPFLAGS=${FLAGS} $1  && \
-    ./$1 < ${1}_input.txt | tee ${1}_out.txt 
+    ./$1 < ${1}_input.txt | tee ${1}_out.txt
 elif [ $2 == "f" ]; then
     if [ ! -f ${1}_input.txt ]; then
         echo "input?"

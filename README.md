@@ -17,7 +17,11 @@
   - [ ] Problem D: Today is Gonna be a Great Day
   - [ ] Problem E: Bohemian Rap-sody
 - Round 2
-  - [ ] 1
+  - [x] Problem A1: Ready, Go (Part 1)
+  - [x] Problem A2: Ready, Go (Part 2)
+  - [x] Problem B: Meta Game
+  - [x] Problem C: Wiki Race
+  - [ ] Problem D: Tower Rush
 - Round 3
   - [ ] 1
 - Final Round
@@ -279,9 +283,14 @@
 ## 2014
 
 - Qualification Round
-  - [ ] P
+  - [x] Problem A: Square Detector
+  - [x] Problem B: Basketball Game
+  - [ ] Problem C: Tennison
 - Round 1
-  - [ ] P
+  - [x] Problem A: Labelmaker
+  - [ ] Problem B: Coins Game
+  - [ ] Problem C: AAAAAA
+  - [ ] Problem D: Preventing Alzheimer's
 - Round 2
   - [ ] P
 - Round 3
