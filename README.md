@@ -23,7 +23,11 @@
   - [x] Problem C: Wiki Race
   - [ ] Problem D: Tower Rush
 - Round 3
-  - [ ] 1
+  - [ ] Problem A: Spooky Splits
+  - [ ] Problem B: Hash Slinger
+  - [ ] Problem C: Krab-otage
+  - [ ] Problem D: Double Stars
+  - [ ] Problem E: Similar Ships
 - Final Round
   - [ ] 1
 
@@ -289,14 +293,21 @@
 - Round 1
   - [x] Problem A: Labelmaker
   - [ ] Problem B: Coins Game
-  - [ ] Problem C: AAAAAA
+  - [x] Problem C: AAAAAA
   - [ ] Problem D: Preventing Alzheimer's
 - Round 2
-  - [ ] P
+  - [ ] Problem A: Magic Pairs
+  - [ ] Problem B: Hold'em Numbers
+  - [ ] Problem C: Ski Resort Planning
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Secret Santa
+  - [ ] Problem B: Pizza Baking
+  - [ ] Problem C: Restaurant Chains
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Intervals of Love
+  - [ ] Problem B: Lunch at Facebook
+  - [ ] Problem C: Fortunate Wheels
+  - [ ] Problem D: Tours
 
 ## 2013
 
