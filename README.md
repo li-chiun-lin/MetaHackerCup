@@ -328,20 +328,33 @@
   - [ ] Problem B: Name the Baby
   - [ ] Problem C: Greedy Entertainers
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Archiver
+  - [ ] Problem B: Colored Trees
+  - [ ] Problem C: Minesweeping
+  - [ ] Problem D: Teleports
 
 ## 2012
 
 - Qualification Round
-  - [ ] P
+  - [ ] Problem A: Alphabet Soup
+  - [ ] Problem B: Auction
+  - [ ] Problem C: Billboards
 - Round 1
-  - [ ] P
+  - [ ] Problem A: Checkpoint
+  - [ ] Problem B: Recover the Sequence
+  - [ ] Problem C: Squished Status
 - Round 2
-  - [ ] P
+  - [ ] Problem A: Monopoly
+  - [ ] Problem B: Road Removal
+  - [ ] Problem C: Sequence Slicing
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Divisor Function Optimization
+  - [ ] Problem B: Trapezoids
+  - [ ] Problem C: Unfriending
 - Final Round
-  - [ ] P
+  - [ ] Problem A: Linsane Phone Numbers
+  - [ ] Problem B: Maximal Multiplicative Order
+  - [ ] Problem C: Possible Medians
 
 ## 2011
 

@@ -1,0 +1,30 @@
+5
+8 8
+xxxxxxxx
+1221124x
+0000001x
+1100011x
+x10001xx
+x10001xx
+x11111xx
+xxxxxxxx
+8 8
+xxxxxxxx
+1221124x
+0000001x
+1100011x
+x10001xx
+x30001xx
+x11111xx
+xxxxxxxx
+5 5
+xxxxx
+xxxxx
+xx1xx
+xxxxx
+xxxxx
+1 1
+0
+2 2
+5x
+xx
