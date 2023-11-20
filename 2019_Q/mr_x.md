@@ -11,7 +11,7 @@ In Mr. X's class, you've been learning about single-variable Boolean expressions
     - "0": The constant $False$
     - "1": The constant $True$
 
-1) A binary operator joining two valid expressions in the format "([expression] [operator] [expression])", with the operator being one of the following three characters:
+1) A binary operator joining two valid expressions in the format "($[$expression$][$operator$][$expression$]$)", with the operator being one of the following three characters:
 
     - "|": The OR operator (evaluating to $True$ when at least one of its operands is $True$)
     - "&": The AND operator (evaluating to $True$ when both of its operands are $True$)

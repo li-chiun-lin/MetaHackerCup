@@ -1,0 +1,26 @@
+5
+5 10
+2
+like
+poke
+5 100
+1
+hack
+3 5
+3
+ab
+bc
+ca
+7 100000
+4
+abcd
+bcde
+cdef
+defg
+10 1000000000
+5
+facebook
+hacker
+cup
+round
+three

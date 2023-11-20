@@ -23,7 +23,7 @@
   - [x] Problem C: Wiki Race
   - [ ] Problem D: Tower Rush
 - Round 3
-  - [ ] Problem A: Spooky Splits
+  - [x] Problem A: Spooky Splits
   - [ ] Problem B: Hash Slinger
   - [ ] Problem C: Krab-otage
   - [ ] Problem D: Double Stars
@@ -312,13 +312,21 @@
 ## 2013
 
 - Qualification Round
-  - [ ] P
+  - [x] Problem A: Beautiful strings
+  - [x] Problem B: Balanced Smileys
+  - [x] Problem C: Find the Min
 - Round 1
-  - [ ] P
+  - [x] Problem A: Card Game
+  - [ ] Problem B: Security
+  - [ ] Problem C: Dead Pixels
 - Round 2
-  - [ ] P
+  - [ ] Problem A: Cake Cutting
+  - [ ] Problem B: RoboElection
+  - [ ] Problem C: Permutations
 - Round 3
-  - [ ] P
+  - [ ] Problem A: Digits War
+  - [ ] Problem B: Name the Baby
+  - [ ] Problem C: Greedy Entertainers
 - Final Round
   - [ ] P
 
