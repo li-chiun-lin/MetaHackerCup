@@ -12,3 +12,9 @@ int getRandomNumber() {
 This function returns an integer number in $[0, 999]$; each digit represents one of ten symbols that appear on a wheel during a particular machine state. secret is initially set to some nonnegative value unknown to you.
 
 By observing the operation of a machine long enough, you can determine value of secret and thus predict future outcomes. Knowing future outcomes you would be able to bet in a smart way and win lots of money.
+
+## Input
+
+The first line of the input contains positive number $T$, the number of test cases. This is followed by $T$ test cases.  
+Each test case consists of a positive integer $N$, the number of observations you make.  
+Next $N$ tokens are integers from $0$ to $999$ describing your observations.

@@ -20,3 +20,11 @@ You'll only be given $A_1, B_1, C_1​, D_1$​ directly, and must compute the r
 $A_i\ := A_i'\ \oplus \ (R_1*E_1)\ \oplus \,\cdots\, \oplus\ (R_{i-1}*E_{1-1})$
 
 where $\oplus$ is the bitwise XOR operator, with $B_i$​, $C_i$​, and $D_i$​ computed similarly. In other words, if the answer to the $i$-th query is "yes", XOR all future query coordinates by $E_i$​.
+
+## Input
+
+Input begins with an integer $T$, the number of test cases.  
+For the $i$-th test case, there is first a line containing a single integer $N$.  
+Then, $N$ descriptions of polygons follow, the $i$-th of which consists of two lines: the first containing a single integer $M_i$​ and the second containing $2 \times M_i$​ space-separated integers $X_{i,1}​, Y_{i,1}​, ……, X_{i,M_i}​​, Y_{i,M_i}$​​.  
+Then, there is a line containing a single integer $Q$.  
+Then, $Q$ lines follow, the $i$-th of which contains five space-separated integers, either $A_1, B_1​, C_1​, D_1​, E_1$​ (if $i=1$), or $A_i^′​, B_i^′​, C_i^′​, D_i^′​, E_i$​ (if $i>1$).

@@ -10,3 +10,10 @@ This would be an easy problem, but the style of the tiles in your apartment intr
 
 - Running across a tile with stickiness $s$ grants $s$ units of kinetic energy. For example, a tile with stickiness $9$ is not slippery at all and you can run across it very efficiently, whereas a tile with stickiness $1$ is quite slippery and does not help you increase your kinetic energy much as you run across it.
 - Sliding across a tile with stickiness $s$ robs you of $s$ units of kinetic energy. If a tile would reduce your kinetic energy below $0$, you stop sliding somewhere in the middle of the tile and fail to traverse it completely.
+
+## Input
+
+Your input will consist of a single integer $N$ followed by a newline and $N$ test cases.  
+Each case begins with a line containing integers $R$ and $C$, the number of rows and columns, respectively, of tiles in your apartment.  
+This will be followed by $R$ lines, each containing a string of length $C$, describing the layout of the tiles in your apartment.  
+The value of each element in these strings is the stickiness as defined above of the corresponding tile.

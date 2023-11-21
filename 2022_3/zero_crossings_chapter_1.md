@@ -14,3 +14,11 @@ Query $i$ asks whether you can roll the marbles and continuously move/deform rub
 - rubber bands never touch/cross, and the marbles never touch each other or any rubber band.
 
 Let $R_i = 1$ if the answer to the $i$-th query is "yes", else $R_i = 0$. Please find the sum of $R_1, ..., R_Q$​.
+
+## Input
+
+Input begins with an integer $T$, the number of test cases.  
+For the $i$-th test case, there is first a line containing a single integer $N$.  
+Then, $N$ descriptions of polygons follow, the $i$-th of which consists of two lines: the first containing a single integer $M_i$​ and the second containing $2 \times M_i$​ space-separated integers $X_{i,1}, Y_{i,1}​, ……, X_{i,M_i}​​, Y_{i,M_i}$​​.  
+Then, there is a line containing a single integer $Q$.  
+Then, $Q$ lines follow, the $i$-th of which contains four space-separated integers $A_i$​, $B_i$​, $C_i$​, $D_i$​.

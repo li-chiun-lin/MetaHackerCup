@@ -21,6 +21,6 @@ For example, a sequence of two moves of type #2 is illustrated below:
 
 Please help Shaun determine the minimum number of moves required to clear all the spaces in row $K$.
 
-#Input
+## Input
 
 Input begins with an integer $T$, the number of garages in which Shaun must clear a path. For each garage, there is first a line containing 3 space-separated integers $R, C,$ and $K$. Then, $R$ lines follow, the $i$-th of which contains the $C$ characters $G_{i,1..C}​.

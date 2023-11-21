@@ -7,3 +7,8 @@ For example when $N = 9$ and $K = 3$ people would leave in following order: $4, 
 Given $N$ and $K$, find who wins the game if counting starts with person $1$. Person indices are $1$-based.
 
 The last person who is left is declared the winner.
+
+## Input
+
+The input consists of a single integer $T$, the number of test cases.  
+This is followed by $T$ pairs of numbers $N$ and $K$, all separated by whitespace.

@@ -16,3 +16,10 @@ x.x.x.x.x
 
 'x' indicates a peg, '.' indicates empty space.
 ```
+
+## Input
+
+You should first read an integer $N$, the number of test cases. Each of the next $N$ lines will then contain a single test case.  
+Each test case will start with integers $R$ and $C$, the number of rows and columns ($R$ will be odd).  
+Next, an integer $K$ will specify the target column.  
+Finally, an integer $M$ will be followed by $M$ pairs of integer $r_i$ and $c_i$, giving the locations of the missing pegs.

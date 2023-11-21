@@ -14,3 +14,9 @@ Your brand image is hurt if you go too long without selling lemonade. The brand 
 $\sum_{i=1}^{M-1} \max(K, (X_{H_i} - X_{H_{i + 1}})^2 + (Y_{H_i} - Y_{H_{i + 1}})^2)$
 
 Is it possible to make the journey? If so, what is the minimum possible total brand damage to do so? Note that the answer may be large, but will fit in a 64-bit integer.
+
+## Input
+
+Input begins with a single integer $T$, the number of test cases.  
+For each test case, there is first a line containing three space-separated integers $N$, $K$, and $D$.  
+Then, $N$ lines follow, the $i$-th of which contains two space-separated integers $X_i$​ and $Y_i$​.

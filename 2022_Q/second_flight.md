@@ -4,7 +4,7 @@ Meta Getaways is a travel agency that deals with $N$ airports numbered $1 \dots 
 
 Peak travel season is here, and will last $Q$ days. For each day $i$, determine $F_i$​, the maximum number of tourists who could possibly fly from airport $X_i$​ to $Y_i$​. Each tourist may either fly directly or take one morning and one evening flight which share an intermediate airport.
 
-## Input Format
+## Input
 
 Input begins with a single integer $T$, the number of test cases.  
 For each case, there is first a line containing three space-separated integers $N$, $M$, and $Q$.  

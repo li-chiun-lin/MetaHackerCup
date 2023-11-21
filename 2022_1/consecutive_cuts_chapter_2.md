@@ -6,7 +6,7 @@ Cutting the deck once consists of taking a stack of between $1$ and $N - 1$ (inc
 
 Initially, the $i$-th card from the top is $A_i$​. Is it possible to cut the deck exactly $K$ times to reorder the deck such that the $i$-th card from the top is $B_i$​ for all $i$?
 
-## Input Format
+## Input
 
 Input begins with an integer $T$, the number of test cases.  
 For each test case, there is first a line containing two space-separated integers $N$ and $K$.  
