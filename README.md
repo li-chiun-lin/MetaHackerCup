@@ -29,7 +29,13 @@
   - [ ] Problem D: Double Stars
   - [ ] Problem E: Similar Ships
 - Final Round
-  - [ ] 1
+  - [ ] Problem A1: Programming Paths (Part 1)
+  - [ ] Problem A2: Programming Paths (Part 2)
+  - [ ] Problem B: Transposing Tiles
+  - [ ] Problem C: Resisting Robots
+  - [ ] Problem D: Nearly Nim
+  - [ ] Problem E: Dealing Decks
+  - [ ] Problem F: Cacti Cartography
 
 ## 2022
 
