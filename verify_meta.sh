@@ -1,6 +1,15 @@
 #!/bin/bash
 
-[ $# -eq 2 ] || { echo "$0 prog no."; exit 1; }
+[ $# -eq 2 ] || { 
+    echo "Usage: $(basename $0) program_name opt"
+    echo "opt:"
+    echo "  s  # sample dataset"
+    echo "  v  # validation dataset"
+    echo "  vv # actual dataset"
+    echo "  f  # compare output with actual dataset"
+    echo "  c  # individual datasets"
+    exit 1
+}
 
 FLAGS='-std=c++17'
 

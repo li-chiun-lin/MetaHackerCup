@@ -369,7 +369,7 @@
   - [x] Problem B: Peg Game
   - [x] Problem C: Studious Student
 - Round 1A
-  - [ ] Problem A: Diversity Number
+  - [x] Problem A: Diversity Number
   - [x] Problem B: Turn on the Lights
   - [ ] Problem C: Wine Tasting
 - Round 1B
