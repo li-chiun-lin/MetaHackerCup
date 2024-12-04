@@ -26,13 +26,6 @@
 
 using namespace std;
 
-void print(vector<int>& vec)
-{
-	for (auto x : vec)
-		cout << x << " ";
-	cout << "\n";
-}
-
 long long prime_sub(int N, vector<bool>& sieve)
 {
 	int cnt = 0;

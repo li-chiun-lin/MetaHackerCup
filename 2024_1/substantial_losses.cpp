@@ -26,54 +26,62 @@
 
 using namespace std;
 
-int mul(long long a, long long b, int m)
-{
-	long long r = 1;
-	long long base = b;
+const int MOD = 998244353;
 
-	while (base)
-	{
-		if (base & 1)
-			r = (r + b) % m;
+// Function to perform modular multiplication
+// Multiplies two numbers a and b under modulo m
+int mul(long long a, long long b, int m) {
+    long long result = 0;  // Initialize result
+    long long base = b % m; // Ensure b is within the modulus range
 
-		b = (b + b) % m;
-		base >>= 1;
-	}
+    while (base) {
+        // If the current bit of base is set, add `a` to the result
+        if (base & 1)
+            result = (result + a) % m;
 
-	return r;
+        // Double the value of a and reduce modulo m
+        a = (a + a) % m;
+        base >>= 1; // Shift base right by 1
+    }
+
+    return result;
 }
 
-int pow(long long a, long long x, int m)
-{
-	long long r = 1;
+// Function to perform modular exponentiation
+// Computes (a^x) % m using iterative squaring
+int pow(long long a, long long x, int m) {
+    long long result = 1;  // Initialize result
+    a = a % m;             // Ensure a is within the modulus range
 
-	while (x)
-	{
-		if (x & 1)
-			r = r * a % m;
+    while (x > 0) {
+        // If the current bit of x is set, multiply result by `a`
+        if (x & 1)
+            result = (result * a) % m;
 
-		a = a * a % m;
-		x >>= 1;
-	}
+        // Square `a` and reduce modulo m
+        a = (a * a) % m;
+        x >>= 1; // Shift x right by 1
+    }
 
-	return r;
+    return result;
 }
 
-int inv(long long a, int m)
-{
-	return pow(a, m - 2, m);
+// Function to find the modular inverse of `a` under modulo `m`
+// Using Fermat's Little Theorem: a^(m-2) % m (only works when m is prime)
+int inv(long long a, int m) {
+    return pow(a, m - 2, m); // Compute modular inverse using pow
 }
 
-int substantial_losses(long long W, long long G, long long L)
-{
-	int mod = 998244353;
-	
-	//L %= mod;
+// Function to calculate a specific formula: ((2L + 1) * (W - G)) % mod
+int substantial_losses(long long W, long long G, long long L) {
+    // Compute (2 * L + 1) % mod
+    long long a = (2 * L + 1) % MOD;
+    
+    // Compute (W - G) % mod, ensuring non-negative result by adding MOD and taking % again
+    long long b = (W - G + MOD) % MOD;
 
-	long long a = (L * 2 + 1) % mod;
-	long long b = (W - G) % mod;
-
-	return a * b % mod;
+    // Return the product a * b under the modulo
+    return (a * b) % MOD;
 }
 
 int main()

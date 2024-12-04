@@ -26,86 +26,64 @@
 
 using namespace std;
 
-int find(vector<int>& g, int x)
-{
-	return g[x] == x ? x : g[x] = find(g, g[x]);
-}
+const int TRIALS = 2000;  // Number of random trials for line fitting
 
-void join(vector<int>& g, int x, int y)
-{
-	g[find(g, x)] = find(g, y);
-}
+/**
+ * @brief Finds the minimum number of points to remove to make all remaining points collinear.
+ * 
+ * @param N The number of points.
+ * @param P A vector of pairs representing the (x, y) coordinates of the points.
+ * @return The minimum number of points to remove to make the remaining points collinear.
+ */
+int fall_in_line(int N, vector<pair<int, int>>& P) {
+    int best = 0;  // Track the largest number of points on a single line
 
-int fall_in_line(int N, vector<pair<int, int>>& P)
-{
-	int mx = 0;
+    // Perform multiple random trials to check lines between pairs of points
+    for (int t = 0; t < TRIALS; ++t) {
+        int r1 = rand() % N;  // Random index for the first point
+        int r2 = rand() % N;  // Random index for the second point
 
-	//cout << "\n";
+        // Ensure that we pick two distinct points
+        if (r1 == r2) {
+            --t;  // Retry this trial
+            continue;
+        }
 
-	for (int i = 0; i < N; ++i)
-	{
-		map<pair<int, int>, int> cnt;
-		pair<int, int> d;
-		auto [x1, y1] = P[i];
+        // Destructure the selected points
+        auto [p1x, p1y] = P[r1];
+        auto [p2x, p2y] = P[r2];
 
-		//cout << "i " << x1 << " " << y1 << "\n";
+        // Determine if the line between the two points is vertical
+        bool vertical = (p1x == p2x);
+        long long rise = 0, run = 0, bNum = 0;  // Variables to define the line equation
 
-		for (int j = i + 1; j < N; ++j)
-		{
-			auto [x2, y2] = P[j];
+        // If not vertical, calculate the rise, run, and intercept
+        if (!vertical) {
+            rise = p2y - p1y;
+            run = p2x - p1x;
+            bNum = run * p1y - rise * p1x;  // Calculate bNum = (run * y1 - rise * x1)
+        }
 
-			//cout << "  j " << x2 << " " << y2 << "\n";
+        int onLine = 0;  // Counter for points on the current line
 
-			int dx = x1 - x2;
-			int dy = y1 - y2;
+        // Check how many points lie on this line
+        for (const auto& [px, py] : P) {
+            if (vertical) {
+                if (px == p1x) ++onLine;  // For vertical lines, check x-coordinate equality
+            } else {
+                long long expectedRunUnits = rise * px + bNum;
+                if (expectedRunUnits % run == 0 && expectedRunUnits / run == py) {
+                    ++onLine;  // For non-vertical lines, check if (rise * px + bNum) / run == py
+                }
+            }
+        }
 
-			if (dx)
-			{
-				if (dy)
-				{
-					//cout << "dx dy " << dx << " " << dy << "\n";
-					int g = gcd(dx, dy);
-					dy /= g;
-					dx /= g;
+        // Update the best line if the current line has more points
+        best = max(best, onLine);
+    }
 
-					//cout << "g " << g << "\n";
-					//cout << dy << " " << dy << "\n";
-
-					if (dx < 0)
-					{
-						dx *= -1;
-						dy *= -1;
-					}
-
-					d = {dy, dx};
-				}
-				else
-				{
-					//cout << "dx 0\n";
-					d = {0, 0};
-				}
-			}
-			else
-			{
-				//cout << "0 dy\n";
-				d = {-1, 0};
-			}
-
-			++ cnt[d];
-		}
-
-		//cout << "i = " << i << "\n";
-
-		for (auto& [p, c] : cnt)
-		{
-			//cout << "  " << p.first << "," << p.second << " " << c << "\n";
-			mx = max(mx, c);
-		}
-	}
-
-	//cout << "mx = " << mx << "\n";
-
-	return N - (mx + 1);
+    // Return the minimum number of points to remove to make the remaining points collinear
+    return N - best;
 }
 
 int main()

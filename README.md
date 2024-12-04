@@ -1,5 +1,35 @@
 # Meta Hacker Cup
 
+## 2024
+
+- Qualification Round
+  - [x] Problem A: Walk the Line
+  - [x] Problem B: Line by Line
+  - [x] Problem C: Fall in Line
+  - [x] Problem D1: Line of Delivery (Part 1)
+  - [x] Problem D2: Line of Delivery (Part 2)
+- Round 1
+  - [x] Problem A: Subsonic Subway
+  - [x] Problem B: Prime Subtractorization
+  - [x] Problem C: Substantial Losses
+  - [ ] Problem D: Substitution Cipher
+  - [ ] Problem E: Wildcard Submissions
+- Round 2
+  - [x] Problem A1: Cottontail Climb (Part 1)
+  - [x] Problem A2: Cottontail Climb (Part 2)
+  - [ ] Problem B: Four in a Burrow
+  - [ ] Problem C: Bunny Hopscotch
+  - [ ] Problem D: Splitting Hares
+- Round 3
+  - [x] Problem A: Set, Cover
+  - [x] Problem B: Least Common Ancestor
+  - [x] Problem C: Coin Change
+  - [ ] Problem D: Min-flow Max-cut
+  - [x] Problem E1: All Triplets Shortest Path (Part 1)
+  - [x] Problem E2: All Triplets Shortest Path (Part 2)
+- Final Round
+  - [ ] Problem A1:
+
 ## 2023
 
 - Qualification Round
