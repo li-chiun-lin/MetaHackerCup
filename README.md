@@ -12,14 +12,14 @@
   - [x] Problem A: Subsonic Subway
   - [x] Problem B: Prime Subtractorization
   - [x] Problem C: Substantial Losses
-  - [ ] Problem D: Substitution Cipher
-  - [ ] Problem E: Wildcard Submissions
+  - [x] Problem D: Substitution Cipher
+  - [x] Problem E: Wildcard Submissions
 - Round 2
   - [x] Problem A1: Cottontail Climb (Part 1)
   - [x] Problem A2: Cottontail Climb (Part 2)
-  - [ ] Problem B: Four in a Burrow
-  - [ ] Problem C: Bunny Hopscotch
-  - [ ] Problem D: Splitting Hares
+  - [x] Problem B: Four in a Burrow
+  - [x] Problem C: Bunny Hopscotch
+  - [x] Problem D: Splitting Hares
 - Round 3
   - [x] Problem A: Set, Cover
   - [x] Problem B: Least Common Ancestor

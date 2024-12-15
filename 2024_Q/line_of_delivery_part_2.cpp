@@ -27,41 +27,32 @@
 
 using namespace std;
 
-pair<int, int> line_of_delivery(int N, int G, vector<int>& E)
-{
-	vector<int> S(N);
+pair<int, int> line_of_delivery(int N, int G, vector<int>& E) {
+    // Adjust each element of E by subtracting (N - i - 1) from E[i]
+    for (int i = 0; i < N; ++i)
+        E[i] -= (N - i - 1);
 
-    // Modify the elements in E and copy them to S
-    for (int i = 0; i < N; ++i) {
-        E[i] -= (N - i - 1);  // Adjust E[i] based on the index
-        S[i] = E[i];  // Copy the modified E[i] into S
-    }
+    // Sort the adjusted vector E
+    sort(E.begin(), E.end());
 
-    // Sort the array S
-    sort(S.begin(), S.end());
+    // Adjust each element by adding its index back
+    for (int i = 0; i < N; ++i)
+        E[i] += i;
 
-    // Adjust elements in S by adding the index
-    for (int i = 0; i < N; ++i) {
-        S[i] += i;
-    }
-
-    // Initialize the pair to store the minimum distance and corresponding value
+    // Initialize the minimum distance and corresponding value
     pair<int, int> p = {INT_MAX, -1};
 
-    // Find the minimum distance between elements in S and G
-    for (auto s : S) {
-        p = min(p, {abs(s - G), -s});
-    }
+    // Find the minimum absolute distance between elements in E and the goal G
+    for (auto e : E)
+        p = min(p, {abs(e - G), -e});
 
-    // Count how many elements in S are less than -p.second
+    // Count how many elements in E are less than the negative of the smallest value found
     int cnt = 0;
-    for (auto s : S) {
-        if (s < -p.second) {
+    for (auto e : E)
+        if (e < -p.second)
             ++cnt;
-        }
-    }
 
-    // Return the result: (N - cnt, minimum absolute distance to G)
+    // Return the number of required deliveries and the minimum absolute distance
     return {N - cnt, p.first};
 }
 
