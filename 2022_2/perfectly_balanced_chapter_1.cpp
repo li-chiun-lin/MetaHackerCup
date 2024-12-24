@@ -1,5 +1,5 @@
 /*
-LTE
+
 */
 
 #include <algorithm>
@@ -17,111 +17,85 @@ LTE
 
 using namespace std;
 
-bool check(vector<int>& p1, vector<int>& p2)
-{
-    int dif = 0;
-    bool valid = true;
+// Function to check if the frequency vector `a` is "almost perfect" compared to `b`
+// Returns true if all characters in `b` are present in `a`, and `a` has exactly one surplus character.
+bool isAlmostPerfect(const vector<int>& a, const vector<int>& b) {
+    int surplus = 0;
 
-    for (int i = 0; i < 26 && valid && dif < 2; ++i)
-    {
-        if (p1[i] == p2[i])
-            ;
-        else if (p1[i] < p2[i])
-            valid = false;
-        else
-            dif += p1[i] - p2[i];
+    for (int c = 0; c < 26; ++c) {
+        if (a[c] < b[c]) {
+            return false; // `a` lacks characters present in `b`
+        }
+        surplus += a[c] - b[c];
     }
 
-    return valid && dif == 1;
+    return surplus == 1; // True if total surplus is exactly one
 }
 
-int perfect(string& S, vector<vector<int>>& query)
-{
-    int cnt = 0;
+// Function to compute character frequencies for a substring [left, right]
+// using a precomputed prefix frequency array `freq`
+vector<int> computeFrequencies(int left, int right, const vector<vector<int>>& freq) {
+    vector<int> f(26);
 
-    for (char& c : S)
-        c -= 'a';
-
-    for (auto& lr : query)
-    {
-        int start = lr[0] - 1;
-        int len = lr[1] - lr[0] + 1;
-
-        if (len % 2 == 0)
-            continue;
-
-        //string sub = S.substr(lr[0] - 1, len);
-        //cout << sub << "\n";
-
-        int half = len / 2;
-        auto mid = S[start + half];
-        //cout << mid << "\n";
-
-        vector<int> left(26), right(26);
-
-        for (int i = 0; i < half; ++i)
-        {
-            ++ left[S[start + i]];
-            ++ right[S[start + len - 1 - i]];
-        }
-
-        // case 1: delete at middle
-
-        if (left == right)
-        {
-            ++ cnt;
-            continue;
-        }
-
-        // case 2: delete at left part
-        ++ left[mid];
-
-        if (check(left, right))
-        {
-            ++ cnt;
-            continue;
-        }
-
-        -- left[mid];
-
-        // case 3: delete at right part
-
-        ++ right[mid];
-
-        if (check(right, left))
-        {
-            ++ cnt;
-            continue;
-        }
-
-        -- right[mid];
+    for (int c = 0; c < 26; ++c) {
+        f[c] = freq[right + 1][c] - freq[left][c];
     }
 
-    return cnt;
+    return f;
 }
 
-int main()
-{
-	int T;
-	cin >> T;
+// Function to count the number of "almost perfect" substrings based on queries
+int countAlmostPerfectSubstrings(const string& S, const vector<pair<int, int>>& queries) {
+    int n = S.size();
 
-	for (int t = 1; t <= T; ++t)
-	{
+    // Precompute prefix frequency array for each character
+    vector<vector<int>> freq(n + 1, vector<int>(26));
+    for (int i = 0; i < n; ++i) {
+        freq[i + 1] = freq[i];
+        ++freq[i + 1][S[i] - 'a'];
+    }
+
+    int count = 0; // Count of "almost perfect" substrings
+
+    // Process each query
+    for (const auto& [left, right] : queries) {
+        int l = left - 1;  // Convert to 0-based indexing
+        int r = right - 1;
+
+        if ((r - l + 1) % 2 == 0) {
+            continue; // Skip even-length substrings
+        }
+
+        int mid = l + (r - l) / 2;
+
+        // Check two possible splits for "almost perfect" condition
+        if (isAlmostPerfect(computeFrequencies(l, mid, freq), computeFrequencies(mid + 1, r, freq)) ||
+            isAlmostPerfect(computeFrequencies(mid, r, freq), computeFrequencies(l, mid - 1, freq))) {
+            ++count;
+        }
+    }
+
+    return count;
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    for (int t = 1; t <= T; ++t) {
         string S;
         cin >> S;
 
         int Q;
         cin >> Q;
 
-        vector<vector<int>> query(Q, vector<int>(2));
+        vector<pair<int, int>> queries(Q);
+        for (auto& [L, R] : queries) {
+            cin >> L >> R;
+        }
 
-        for (int i = 0; i < Q; ++i)
-            cin >> query[i][0] >> query[i][1];
+        cout << "Case #" << t << ": " << countAlmostPerfectSubstrings(S, queries) << "\n";
+    }
 
-		cout << "Case #" << t << ": ";
-		cout << perfect(S, query) << "\n";
-	}
-
-	return 0;
+    return 0;
 }
-

@@ -28,7 +28,12 @@
   - [x] Problem E1: All Triplets Shortest Path (Part 1)
   - [x] Problem E2: All Triplets Shortest Path (Part 2)
 - Final Round
-  - [ ] Problem A1:
+  - [x] Problem A: Duplicate Order
+  - [ ] Problem B: Distributed Server
+  - [ ] Problem C: Chicken Tender
+  - [ ] Problem D: Sushi Platter
+  - [ ] Problem E: Snake Cover
+  - [ ] Problem F: Pizza Broiler
 
 ## 2023
 
@@ -83,9 +88,9 @@
   - [x] Problem B2: Watering Well - Chapter 2
   - [ ] Problem C: Lemonade Life
 - Round 2
-  - [ ] Problem A1: Perfectly Balanced - Chapter 1
+  - [x] Problem A1: Perfectly Balanced - Chapter 1
   - [ ] Problem A2: Perfectly Balanced - Chapter 2
-  - [ ] Problem B: Balance Sheet
+  - [x] Problem B: Balance Sheet
   - [ ] Problem C: Balance Scale
   - [ ] Problem D1: Work-Life Balance - Chapter 1
   - [ ] Problem D2: Work-Life Balance - Chapter 2

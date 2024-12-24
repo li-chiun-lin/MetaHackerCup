@@ -49,8 +49,10 @@ elif [ $2 == "f" ]; then
     fi
 
     make CPPFLAGS=${FLAGS} $1  && \
-    ./$1 < ${1}_input.txt > ${1}_out2.txt && \
-    diff ${1}_out.txt ${1}_out2.txt
+    ./$1 < ${1}_input.txt | tee ${1}_out2.txt && \
+    if diff ${1}_out.txt ${1}_out2.txt; then
+	echo "identical"
+    fi
     rm -f ${1}_out2.txt
 elif [ $2 == "c" ]; then
     make CPPFLAGS=${FLAGS} $1  && \

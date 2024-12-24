@@ -7,3 +7,9 @@ Client $i$ can sell to client $j$ if $B_i = A_j$​, and if client $j$ is buying
 A path is any ordered sequence of clients where each client can sell to the next. A path's profit is the total profit that Metal would make if a single sheet were theoretically sold along it.
 
 Metal would like to know the total profit across the $K$ most profitable paths (or across all distinct paths if there are fewer than $K$). Since this may be large, please print it modulo $1{,}000{,}000{,}007$.
+
+## Input Format
+
+Input begins with a single integer $T$, the number of test cases.
+For each test case, there is first a line containing two space-separated integers $N$ and $K$.
+Then, $N$ lines follow, the $i$-th of which contains four space-separated integers $A_i$​, $B_i$​, $X_i$​, and $Y_i$​.
