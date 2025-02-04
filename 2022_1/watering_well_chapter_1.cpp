@@ -19,115 +19,71 @@ using namespace std;
 
 # define D 0
 
-int pow_mod(long a, long b)
+const long long MOD = 1e9 + 7;
+
+// Modular exponentiation: Computes (a^b) % MOD efficiently
+long long pow_mod(long long a, long long b) 
 {
-    long mod = 1e9 + 7;
-    long r = 1;
-
-    while (b)
+    long long result = 1;
+    while (b) 
     {
-        if (b & 1)
-            r = (r * a) % mod;
-
-        a = (a * a) % mod;
+        if (b & 1) 
+            result = (result * a) % MOD;
+        a = (a * a) % MOD;
         b >>= 1;
     }
-
-    return r % mod;
+    return result;
 }
 
-int mul_mod(long a, long b)
+// Modular multiplication: Computes (a * b) % MOD safely
+long long mul_mod(long long a, long long b) 
 {
-    long mod = 1e9 + 7;
-    long r = 0;
-
-    while (b)
+    long long result = 0;
+    while (b) 
     {
-        if (b & 1)
-            r = (r + a) % mod;
-
-        a = (a + a) % mod;
+        if (b & 1) 
+            result = (result + a) % MOD;
+        a = (a + a) % MOD;
         b >>= 1;
     }
-
-    return r % mod;
+    return result;
 }
 
-int squ_mod(long a)
+// Modular squaring: Computes (a^2) % MOD safely
+long long squ_mod(long long a) 
 {
-    long mod = 1e9 + 7;
-    long b = a;
-    long r = 0;
+    return (a * a) % MOD;
+}
 
-    while (b)
+// Computes the squared distance metric between trees and wells
+long long dst(const vector<int>& tree, const vector<int>& well) 
+{
+    long long sigma_t = 0, sigma_t2 = 0;
+    long long sigma_w = 0, sigma_w2 = 0;
+    long long n = tree.size(), q = well.size();
+
+    for (int t : tree) 
     {
-        if (b & 1)
-            r = (r + a) % mod;
-
-        a = (a + a) % mod;
-        b >>= 1;
+        sigma_t = (sigma_t + t) % MOD;
+        sigma_t2 = (sigma_t2 + squ_mod(t)) % MOD;
     }
 
-    return r % mod;
-
-}
-
-void print(vector<int>& v)
-{
-    for (int x : v)
-        cout << x << " ";
-    cout << "\n";
-}
-
-int dst(vector<int>& tree, vector<int>& well)
-{
-    long long mod = 1e9 + 7;
-    long long sigma_t = 0;
-    long long sigma_t2 = 0;
-    long long sigma_w = 0;
-    long long sigma_w2 = 0;
-    long long n = tree.size();
-    long long q = well.size();
-
-    for (int t : tree)
+    for (int w : well) 
     {
-        sigma_t = (sigma_t + t) % mod;
-        sigma_t2 = (sigma_t2 + ((t * t) % mod)) % mod;
+        sigma_w = (sigma_w + w) % MOD;
+        sigma_w2 = (sigma_w2 + squ_mod(w)) % MOD;
     }
 
-    for (int w : well)
-    {
-        sigma_w = (sigma_w + w) % mod;
-        sigma_w2 = (sigma_w2 + ((w * w) % mod)) % mod;
-    }
-
-#if D
-    cout << "tree : ";
-    print(tree);
-    cout << sigma_t << " " << sigma_t2 << "\n";
-    cout << "well : ";
-    print(well);
-    cout << sigma_w << " " << sigma_w2 << "\n";
-#endif
-
-    return (
-            ((n * sigma_w2) % mod) 
-        + ((((-2 * sigma_w * sigma_t) % mod) + mod) % mod)
-        + ((q * sigma_t2) % mod)
-        ) % mod;
+    return (n * sigma_w2 % MOD 
+          + MOD - (2 * sigma_w % MOD * sigma_t % MOD) % MOD 
+          + q * sigma_t2 % MOD) % MOD;
 }
 
-int watering(vector<int>& A, vector<int>& B, vector<int>& X, vector<int>&Y)
+// Computes the total watering distance metric for two sets of trees and wells
+long long watering(const vector<int>& A, const vector<int>& B, 
+                   const vector<int>& X, const vector<int>& Y) 
 {
-    long long mod = 1e9 + 7;
-
-    int r1 = dst(A, X);
-    int r2 = dst(B, Y);
-#if D
-    cout << "cor 1: " << r1 << "\n";
-    cout << "cor 2: " << r2 << "\n";
-#endif
-    return (r1 + r2) % mod;
+    return (dst(A, X) + dst(B, Y)) % MOD;
 }
 
 int main()

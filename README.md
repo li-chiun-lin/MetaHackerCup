@@ -84,16 +84,16 @@
 - Round 1
   - [x] Problem A1: Consecutive Cuts - Chapter 1
   - [x] Problem A2: Consecutive Cuts - Chapter 2
-  - [ ] Problem B1: Watering Well - Chapter 1
+  - [x] Problem B1: Watering Well - Chapter 1
   - [x] Problem B2: Watering Well - Chapter 2
-  - [ ] Problem C: Lemonade Life
+  - [x] Problem C: Lemonade Life
 - Round 2
   - [x] Problem A1: Perfectly Balanced - Chapter 1
-  - [ ] Problem A2: Perfectly Balanced - Chapter 2
+  - [x] Problem A2: Perfectly Balanced - Chapter 2
   - [x] Problem B: Balance Sheet
-  - [ ] Problem C: Balance Scale
-  - [ ] Problem D1: Work-Life Balance - Chapter 1
-  - [ ] Problem D2: Work-Life Balance - Chapter 2
+  - [x] Problem C: Balance Scale
+  - [x] Problem D1: Work-Life Balance - Chapter 1
+  - [x] Problem D2: Work-Life Balance - Chapter 2
 - Round 3
   - [ ] Problem A: Fourth Player
   - [ ] Problem B: Third Trie

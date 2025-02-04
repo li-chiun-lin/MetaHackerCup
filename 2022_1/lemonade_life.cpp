@@ -1,5 +1,5 @@
 /*
-incorrect
+
 */
 
 #include <algorithm>
@@ -17,164 +17,89 @@ incorrect
 
 using namespace std;
 
-struct Point {
-	long long x, y;
-
-	bool operator <(const Point &p) const {
-		return x < p.x || (x == p.x && y < p.y);
-	}
-};
-
-long long cross(const Point &O, const Point &A, const Point &B)
-{
-	return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
+// Define the subtraction operator for pair<int, int>
+pair<int, int> operator-(const pair<int, int>& p1, const pair<int, int>& p2) {
+    return pair<int, int>(p1.first - p2.first, p1.second - p2.second);  // Subtract corresponding elements
 }
 
-vector<Point> convex_hull(vector<Point> P)
-{
-	size_t n = P.size(), k = 0;
-	if (n <= 3) return P;
-	vector<Point> H(2*n);
-
-	// Sort points lexicographically
-	sort(P.begin(), P.end());
-
-	// Build lower hull
-	for (size_t i = 0; i < n; ++i) {
-		while (k >= 2 && cross(H[k-2], H[k-1], P[i]) <= 0) k--;
-		H[k++] = P[i];
-	}
-
-	// Build upper hull
-	for (size_t i = n-1, t = k+1; i > 0; --i) {
-		while (k >= t && cross(H[k-2], H[k-1], P[i-1]) <= 0) k--;
-		H[k++] = P[i-1];
-	}
-
-	H.resize(k-1);
-	return H;
+// Function to compute cross product (used for sorting points and convex hull)
+long long cross(const pair<int, int>& p1, const pair<int, int>& p2) {
+    return (long long)p1.first * p2.second - (long long)p1.second * p2.first;
 }
 
-long long dst2(Point& p0, Point& p1)
-{
-    return (p1.x - p0.x) * (p1.x - p0.x)
-         + (p1.y - p0.y) * (p1.y - p0.y);
+// Function to compute squared distance between two points (pair)
+long long sqrLen(const pair<int, int>& p1, const pair<int, int>& p2) {
+    return (long long)(p1.first - p2.first) * (p1.first - p2.first) + (long long)(p1.second - p2.second) * (p1.second - p2.second);
 }
 
-void print(vector<vector<int>>& P)
+long long lemonade(int N, int K, long long D, vector<pair<int, int>>& P)
 {
-    for (auto& p : P)
-    {
-        for (auto& v : p)
-            cout << v << " ";
-        cout << "\n";
-    }
-    cout << "\n";
-}
+    D *= D;  // Square D
 
-void print(stack<vector<int>> sta)
-{
-    while (sta.size())
-    {
-        cout << sta.top()[0] << " " << sta.top()[1] << "\n";
-        sta.pop();
+    auto p0 = *min_element(P.begin(), P.end());  // Find the point with the smallest y-coordinate
+
+    for (auto& p : P) {
+        p = p - p0;  // Translate all points so that p0 is at the origin
     }
 
-    cout << "\n";
-}
+    sort(begin(P), end(P), [&](const pair<int, int>& p1, const pair<int, int>& p2) {
+        long long c = cross(p1, p2);  // Compute cross product
+        return c > 0 || (c == 0 && sqrLen(p1, {0, 0}) < sqrLen(p2, {0, 0}));  // Sort by cross product and then by squared distance
+    });
 
-void print(vector<Point>& P)
-{
-    for (auto& p : P)
-        cout << p.x << " " << p.y << "\n";
-    cout << "\n";
-}
+    int m = 1;  // Initialize the number of points in the convex hull
+    for (int i = 1; i < N; ++i) {
+        while (m >= 2 && cross(P[i] - P[m - 1], P[m - 1] - P[m - 2]) >= 0) {
+            --m;  // Remove the last point from the convex hull
+        }
+        P[m++] = P[i];  // Add the current point to the convex hull
+    }
 
-long long dfs(vector<Point>& convex, long long K, long long D2, int i, vector<long long>& dp)
-{
-    //cout << "enter " << i << " " << D2 << " ";
-    int M = convex.size();
+    int s = 0;  // Initialize the leftmost point in the convex hull
+    int t = 0;  // Initialize the rightmost point in the convex hull
 
-    if (i == M - 1)
-        return 0;
-
-    if (dp[i])
-        return dp[i];
-
-    long long ret = LLONG_MAX;
-
-    for (int j = i + 1; j < M; ++j)
+    for (int i = 0; i < m; ++i)
     {
+        if (P[i].first < P[s].first)
+            s = i;  // Find the leftmost point in the convex hull
         
-        auto d = dst2(convex[i], convex[j]);
-
-        if (d > D2)
-            continue;
-
-        auto r = dfs(convex, K, D2, j, dp);
-
-        //cout << " check " << j << " " << d << " " << r << " ";
-
-        if (r != -1)
-            ret = min(ret, r + max(K, d));
+        if (P[i].first > P[t].first)
+            t = i;  // Find the rightmost point in the convex hull
     }
 
-    if (ret == LLONG_MAX)
-        return dp[i] = -1;
+    vector<long long> dist(m, 1e18);  // Initialize the vector of distances
+    vector<bool> used(m);  // Initialize the vector of used points
+    dist[s] = 0;  // Set the distance of the leftmost point to 0
 
-    return dp[i] = ret;
-}
-
-int lemonade(vector<Point>& P, int K, int D)
-{
-    int N = P.size();
-    long long D2 = (long long)D * D;
-    int end_x = P.back().x;
-    auto convex = convex_hull(P);
-    int M = convex.size();
-
-    vector<Point> convex1;
-    set<int> dup;
-
-    for (int i = 1; i < M; ++i)
+    for (int it = 0; it < m; ++it)
     {
-        for (int j = 1; j < i; ++j)
+        int v = -1;
+
+        for (int i = 0; i < m; ++i)
         {
-            if (cross(convex[0], convex[i], convex[j]) == 0)
+            if (!used[i] && (v == -1 || dist[i] < dist[v]))
+                v = i;  // Find the closest unused point
+        }
+
+        used[v] = true;  // Mark the point as used
+
+        for (int u = 0; u < m; ++u)
+        {
+            if (! used[u])
             {
-                //cout << "same line " << i << " " << j << "\n";
-                dup.insert(i);
-                dup.insert(j);
+                long long d = sqrLen(P[u], P[v]);  // Compute the squared distance between the points
+
+                if (d > D)
+                    continue;  // Skip if the distance is too large
+
+                d = max(d, (long long)K);  // Set the distance to K if it is smaller
+                d += dist[v];  // Add the distance to the current point
+                dist[u] = min(dist[u], d);  // Update the distance to the point
             }
         }
     }
 
-    convex1.push_back(convex[0]);
-
-    for (int i = 1; i < M; ++i)
-    {
-        if (dup.count(i))
-            continue;
-
-        convex1.push_back(convex[i]);
-    }
-
-    //print(convex);
-    
-
-    int M1 = convex1.size();
-
-    if (M1 < 2)
-        return -1;
-    
-    sort(begin(convex1), end(convex1));
-
-    //print(convex1);
-
-    vector<long long> dp(M1);
-
-    return dfs(convex1, K, D2, 0, dp);
-
+    return dist[t] == 1e18 ? -1 : dist[t];  // Return the distance to the rightmost point
 }
 
 int main()
@@ -187,20 +112,15 @@ int main()
         int N, K, D;
         cin >> N >> K >> D;
 
-        vector<Point> P(N);
-        int x, y;
+        vector<pair<int, int>> P(N);
 
         for (int i = 0; i < N; ++i)
         {
-            cin >> x >> y;
-            P[i].x = x;
-            P[i].y = y;
+            cin >> P[i].first >> P[i].second;
         }
 
-        //P = {{0, 0}, {1, 1}, {2, 2}, {4, 4}, {0, 3}, {1, 2}, {3, 1}, {3, 3}};
-
 		cout << "Case #" << t << ": ";
-		cout << lemonade(P, K, D) << "\n";
+		cout << lemonade(N, K, D, P) << "\n";
 	}
 
 	return 0;

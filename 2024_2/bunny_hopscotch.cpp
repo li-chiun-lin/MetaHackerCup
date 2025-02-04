@@ -25,7 +25,7 @@ using namespace std;
 
 // Fenwick Tree implementation for range sum queries and point updates
 class FenwickTree {
-  int n;                     // Size of the array
+  int size;                     // Size of the array
   vector<long long> data;    // Data storage for Fenwick Tree
 
   // Computes prefix sum from index 0 to r-1
@@ -39,12 +39,12 @@ class FenwickTree {
   }
 
 public:
-  FenwickTree() : n(0) {}
-  explicit FenwickTree(int size) : n(size), data(size) {}
+  FenwickTree() : size(0) {}
+  explicit FenwickTree(int size) : size(size), data(size) {}
 
   // Adds value to the element at index
   void add(int index, int value) {
-    for (++index; index <= n; index += index & -index) {
+    for (++index; index <= size; index += index & -index) {
       data[index - 1] += static_cast<long long>(value);
     }
   }
